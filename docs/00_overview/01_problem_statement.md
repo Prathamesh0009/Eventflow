@@ -149,5 +149,3 @@ EventFlow exists to demonstrate how such a system can be:
 * Cloud-native
 * Extensible
 * Production-oriented
-
-This problem statement forms the foundation for all subsequent architectural and technical decisions in the project.
