@@ -57,7 +57,7 @@ Frontend (Next.js) → Backend API (NestJS) → Event Store (PostgreSQL)
 - **Node.js** with **NestJS** framework
 - **PostgreSQL** for event storage
 - **Redis** for caching and rate limiting
-- **TypeORM** for database access
+- **Prisma** for database access and migrations
 - **JWT** for authentication
 - **OpenTelemetry** for observability
 
@@ -114,49 +114,6 @@ This project includes comprehensive documentation covering the entire design and
 - Redis 7+
 - Docker (optional, for containerized deployment)
 - AWS Account (for cloud deployment)
-
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd Eventflow
-   ```
-
-2. **Set up backend**
-   ```bash
-   cd backend
-   npm install
-   cp .env.example .env
-   # Configure .env with database and Redis credentials
-   npm run migration:run
-   npm run start:dev
-   ```
-
-3. **Set up frontend**
-   ```bash
-   cd frontend
-   npm install
-   cp .env.example .env.local
-   # Configure .env.local with API URL
-   npm run dev
-   ```
-
-4. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:3001
-   - API Docs: http://localhost:3001/api/docs
-
----
-
-## 📋 Implementation Status
-
-This project is currently in the **design and planning phase**. All architecture, requirements, and implementation plans are complete and production-ready.
-
-**Next Steps:**
-- Follow the [Production-Ready Implementation Plan](docs/00_overview/PRODUCTION_READY_IMPLEMENTATION_PLAN.md)
-- Estimated implementation time: 13 weeks
-- Start with Phase 0: Project Setup
 
 ---
 

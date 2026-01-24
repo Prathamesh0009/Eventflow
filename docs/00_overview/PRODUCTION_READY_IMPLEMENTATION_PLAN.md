@@ -55,8 +55,9 @@ Before starting implementation:
    ```bash
    cd backend
    nest new . --skip-git
-   npm install @nestjs/typeorm @nestjs/config @nestjs/jwt
-   npm install pg typeorm
+   npm install @nestjs/config @nestjs/jwt
+   npm install @prisma/client
+   npm install prisma --save-dev
    npm install class-validator class-transformer
    npm install bcrypt argon2
    ```
@@ -98,7 +99,7 @@ Before starting implementation:
 
 #### Tasks:
 1. **Database Schema Implementation**
-   - Create TypeORM entities for all tables:
+   - Create Prisma schema (`schema.prisma`) with all models:
      * `Organization`
      * `User`
      * `ApiKey`
@@ -107,8 +108,9 @@ Before starting implementation:
      * `ConsumerGroup`
      * `ConsumerOffset`
      * `DeadLetterEvent`
-   - Create initial migration
-   - Set up database indexes
+   - Generate Prisma Client: `npx prisma generate`
+   - Create initial migration: `npx prisma migrate dev --name init`
+   - Set up database indexes (in Prisma schema)
    - Test migrations locally
 
 2. **Infrastructure Setup (AWS)**
@@ -439,8 +441,9 @@ Before starting implementation:
    - Configure rollback
 
 5. **Database Migrations**
-   - Automate migration execution
-   - Test migration rollback
+   - Automate Prisma migration execution (`prisma migrate deploy`)
+   - Generate Prisma Client in build process
+   - Test migrations on staging
    - Document migration process
 
 **Deliverables:**
