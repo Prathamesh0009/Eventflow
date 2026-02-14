@@ -1,0 +1,29 @@
+name: CD Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build for Production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Build backend
+        run: |
+          npm ci --prefix backend
+          npm run build --prefix backend
+
+      - name: Build frontend
+        run: |
+          npm ci --prefix frontend
+          npm run build --prefix frontend

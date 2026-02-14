@@ -115,6 +115,10 @@ This project includes comprehensive documentation covering the entire design and
 - Docker (optional, for containerized deployment)
 - AWS Account (for cloud deployment)
 
+### Environment Variables
+
+Copy `backend/.env.example` to `backend/.env` and `frontend/.env.example` to `frontend/.env.local`, then set your values.
+
 ---
 
 ## 🎯 Key Features

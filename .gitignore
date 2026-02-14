@@ -1,0 +1,33 @@
+# Cursor IDE — keep local rules/settings out of the repo
+.cursor/
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and debug
+*.log
+npm-debug.log*
+
+# OS and editor
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# Testing and coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.tsbuildinfo
