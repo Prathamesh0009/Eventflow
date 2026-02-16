@@ -119,6 +119,18 @@ This project includes comprehensive documentation covering the entire design and
 
 Copy `backend/.env.example` to `backend/.env` and `frontend/.env.example` to `frontend/.env.local`, then set your values.
 
+### Branching & development workflow
+
+We use a simple branch model to keep `main` stable and integrate work in one place:
+
+- **`main`** — Stable/production branch. Only updated by merging from `develop` when a set of work is complete (e.g. a phase or release).
+- **`develop`** — Default working branch. Day-to-day development and feature integration happen here.
+- **Feature branches** — Create from `develop` (e.g. `feature/phase-2-auth`). When the feature is done, merge into `develop` only (not into `main`).
+
+**Flow:** `feature/*` → `develop` → (when a set of code is complete) → `main`.
+
+This setup keeps `main` deployable while all new work is integrated and tested on `develop`.
+
 ---
 
 ## 🎯 Key Features
@@ -189,6 +201,8 @@ See [Monitoring & Alerting Design](docs/03_execution_&_build_strategy/3.9_monito
 ## 🤝 Contributing
 
 This is a personal project demonstrating production-ready system design. The documentation shows the complete thought process and architectural decisions.
+
+When contributing, follow the [branching workflow](#branching--development-workflow) above: work on `develop` or a feature branch off `develop`, and merge to `main` only when a phase or release is complete.
 
 ---
 
