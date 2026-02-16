@@ -7,8 +7,17 @@ NestJS backend for EventFlow. Handles event ingestion, streams, consumers, and a
 ```bash
 npm install
 cp .env.example .env
-# Edit .env with your values
+# Edit .env with your values (especially DATABASE_URL)
+npx prisma generate
 ```
+
+## Database
+
+- **Generate client (after schema changes):** `npx prisma generate`
+- **Apply migrations (requires running PostgreSQL):** `npx prisma migrate dev --name <name>`
+- **Production deploy:** `npx prisma migrate deploy`
+
+Schema and migrations live in `prisma/` (see docs 3.3 for the data model).
 
 ## Run
 
